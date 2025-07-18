@@ -8,17 +8,14 @@ public class PlayerController : MonoBehaviour
     public float _speed = 1.0f;
     public Transform _cameraTransform;
     Rigidbody _rb;
-
     void Start()
     {
         _rb = GetComponent<Rigidbody>();
     }
-
     void FixedUpdate()
     {
         Move();
     }
-
     private void Move()
     {
         float x = Input.GetAxisRaw("Horizontal");
