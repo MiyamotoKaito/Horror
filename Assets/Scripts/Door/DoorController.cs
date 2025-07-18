@@ -38,12 +38,14 @@ public class DoorController : MonoBehaviour
             }
         }
     }
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
         {
             Debug.Log("ドアにぶつかった！！");
-            _inTriger = true;
+            if (GetKey._getKey == true)
+                _inTriger = true;
         }
     }
     private void OnTriggerExit(Collider other)
