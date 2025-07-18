@@ -1,6 +1,4 @@
-﻿using System.Runtime.CompilerServices;
-using Palmmedia.ReportGenerator.Core.CodeAnalysis;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class DoorController : MonoBehaviour
 {
@@ -38,7 +36,6 @@ public class DoorController : MonoBehaviour
             }
         }
     }
-
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
