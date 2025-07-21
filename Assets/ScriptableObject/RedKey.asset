@@ -12,7 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 12200e1da0cc54d46821f2ba31436f14, type: 3}
   m_Name: RedKey
   m_EditorClassIdentifier: 
-  _keyName: "\u8D64\u3044\u9375"
-  _tagColor: {r: 1, g: 0, b: 0, a: 0}
-  _prefab: {fileID: 0}
-  _keyID: 0
+  keyName: RedKey
+  tagColor: {r: 1, g: 0, b: 0, a: 0}
+  prefab: {fileID: 7779232645521045802, guid: 044f8fe0b58a6424f946784a0464f78a, type: 3}
