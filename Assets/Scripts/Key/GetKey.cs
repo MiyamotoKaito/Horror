@@ -1,14 +1,20 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 public class GetKey : MonoBehaviour
 {
-    public static bool _getKey;
+    [SerializeField] KeyBase type;
+    [SerializeField] static List<KeyType> keys = new List<KeyType>();
     void OnCollisionEnter(Collision collision)
     {
         if (collision.collider.CompareTag("Player"))
         {
-            _getKey = true;
+            keys.Add(KeyBase.keyID);
             gameObject.SetActive(false);
         }
+    }
+    public static bool HasKey(KeyType keyID)
+    {
+        return keys.Contains(keyID);//特定のキーを持っているかチェックするメソッド
     }
 }
