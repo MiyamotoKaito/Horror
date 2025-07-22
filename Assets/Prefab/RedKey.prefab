@@ -264,7 +264,6 @@ GameObject:
   - component: {fileID: 3827657627122799223}
   - component: {fileID: 7944390723112415672}
   - component: {fileID: 4705021187596672547}
-  - component: {fileID: 7847426726968549074}
   m_Layer: 0
   m_Name: RedKey
   m_TagString: Untagged
@@ -388,16 +387,3 @@ CapsuleCollider:
   m_Height: 0.14
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &7847426726968549074
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7779232645521045802}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d551484f1bd886b479944e1211d1e65f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  type: {fileID: 11400000, guid: 800425dcd4e1480489155816201fea0f, type: 2}
