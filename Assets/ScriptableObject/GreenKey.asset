@@ -13,5 +13,4 @@ MonoBehaviour:
   m_Name: GreenKey
   m_EditorClassIdentifier: 
   keyName: GreenKey
-  tagColor: {r: 0, g: 1, b: 0, a: 0}
-  prefab: {fileID: 8111196573432049809, guid: 60dd61c92611c494db23b539cc82c299, type: 3}
+  keyID: 1

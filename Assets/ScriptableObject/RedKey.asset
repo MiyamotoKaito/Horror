@@ -13,5 +13,4 @@ MonoBehaviour:
   m_Name: RedKey
   m_EditorClassIdentifier: 
   keyName: RedKey
-  tagColor: {r: 1, g: 0, b: 0, a: 0}
-  prefab: {fileID: 7779232645521045802, guid: 044f8fe0b58a6424f946784a0464f78a, type: 3}
+  keyID: 0

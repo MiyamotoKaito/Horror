@@ -5,7 +5,5 @@ using UnityEngine;
 public class KeyBase : ScriptableObject
 {
     public string keyName;
-    public Color tagColor;
-    public GameObject prefab;
     public KeyType keyID;
 }

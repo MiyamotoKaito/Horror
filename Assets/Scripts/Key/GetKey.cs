@@ -3,13 +3,13 @@ using UnityEngine;
 
 public class GetKey : MonoBehaviour
 {
-    [SerializeField] KeyBase type;
+    [SerializeField] KeyBase keyType;
     [SerializeField] static List<KeyType> keys = new List<KeyType>();
     void OnCollisionEnter(Collision collision)
     {
         if (collision.collider.CompareTag("Player"))
         {
-            keys.Add(KeyBase.keyID);
+            keys.Add(keyType.keyID);
             gameObject.SetActive(false);
         }
     }

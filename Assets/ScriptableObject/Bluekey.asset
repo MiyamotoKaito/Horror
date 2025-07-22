@@ -13,5 +13,4 @@ MonoBehaviour:
   m_Name: Bluekey
   m_EditorClassIdentifier: 
   keyName: BlueKey
-  tagColor: {r: 0, g: 0, b: 1, a: 0}
-  prefab: {fileID: 8111196573432049809, guid: 0e1c40c8dbad4964582a5a2ac4a0d22e, type: 3}
+  keyID: 2
