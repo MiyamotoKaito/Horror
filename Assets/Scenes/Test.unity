@@ -262,7 +262,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 619e7b26cc7a74e499531c8fbd4be8a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  key: {fileID: 11400000, guid: 800425dcd4e1480489155816201fea0f, type: 2}
+  keyType: {fileID: 11400000, guid: 800425dcd4e1480489155816201fea0f, type: 2}
   doorAnimator: {fileID: 105216953}
 --- !u!65 &105216957
 BoxCollider:
@@ -425,8 +425,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe98251f639d4f846a2b0022f883a852, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _speed: 3
-  _cameraTransform: {fileID: 1874313377}
+  moveSpeed: 1
+  cameraTransform: {fileID: 0}
 --- !u!136 &407445982
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -878,7 +878,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 619e7b26cc7a74e499531c8fbd4be8a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  key: {fileID: 11400000, guid: f4c45bbae6fa46940b448fd71fc6fce5, type: 2}
+  keyType: {fileID: 11400000, guid: f4c45bbae6fa46940b448fd71fc6fce5, type: 2}
   doorAnimator: {fileID: 1168093887}
 --- !u!95 &1168093887
 Animator:
@@ -1712,7 +1712,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 619e7b26cc7a74e499531c8fbd4be8a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  key: {fileID: 11400000, guid: 1093d4f2b80b06d4fbe5fe8fdba1e687, type: 2}
+  keyType: {fileID: 11400000, guid: 1093d4f2b80b06d4fbe5fe8fdba1e687, type: 2}
   doorAnimator: {fileID: 2043327601}
 --- !u!95 &2043327601
 Animator:
