@@ -2,8 +2,8 @@
 
 public class DoorController : MonoBehaviour
 {
+    [SerializeField] KeyBase keyType;
     public Animator doorAnimator;
-    public KeyType requireKeyID;
     private bool _doorOpen = false;
     private bool _inTriger = false;
     private void Start()
@@ -42,7 +42,7 @@ public class DoorController : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             Debug.Log("ドアにぶつかった！！");
-            if (GetKey.HasKey(requireKeyID))//特定の鍵を持っていたらドアを開けれるようにする
+            if (GetKey.HasKey(keyType.keyID))//特定の鍵を持っていたらドアを開けれるようにする
                 _inTriger = true;
         }
     }
