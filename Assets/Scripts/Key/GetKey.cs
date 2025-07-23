@@ -5,12 +5,11 @@ public class GetKey : MonoBehaviour
 {
     [SerializeField] KeyBase keyType;
     [SerializeField] static List<KeyType> keys = new List<KeyType>();
-    private void OnTriggerEnter(Collider other)
+    void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Player"))
+        if (Input.GetKeyDown(KeyCode.F) && other.CompareTag("Player"))
         {
             keys.Add(keyType.keyID);
-            //gameObject.SetActive(false);
             Destroy(gameObject);
         }
     }
