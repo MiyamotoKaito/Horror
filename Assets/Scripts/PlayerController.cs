@@ -34,6 +34,6 @@ public class PlayerController : MonoBehaviour
         Vector3 move = cameraRight * x + cameraForward * z;
 
         // Rigidbodyを使用して物理的な移動を実行
-        rb.MovePosition(rb.position + move * moveSpeed * Time.fixedDeltaTime);
+        rb.velocity = move * moveSpeed;
     }
 }
