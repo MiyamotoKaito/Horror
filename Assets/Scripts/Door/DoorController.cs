@@ -4,8 +4,8 @@ public class DoorController : MonoBehaviour
 {
     [SerializeField] KeyBase keyType;
     public Animator doorAnimator;
-    private bool _doorOpen = false;
     private bool _inTriger = false;
+    private bool _doorOpen = false;
     private void Start()
     {
         doorAnimator = GetComponent<Animator>();

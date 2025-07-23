@@ -7,7 +7,7 @@ public class GetKey : MonoBehaviour
     [SerializeField] static List<KeyType> keys = new List<KeyType>();
     void OnTriggerEnter(Collider other)
     {
-        if (Input.GetKeyDown(KeyCode.F) && other.CompareTag("Player"))
+        if (other.CompareTag("Player"))
         {
             keys.Add(keyType.keyID);
             Destroy(gameObject);

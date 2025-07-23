@@ -185,8 +185,8 @@ InputManager:
     m_Name: Interact
     descriptiveName: 
     descriptiveNegativeName: 
-    negativeButton: f
-    positiveButton: 
+    negativeButton: 
+    positiveButton: f
     altNegativeButton: 
     altPositiveButton: f
     gravity: 1000
