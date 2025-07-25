@@ -13,4 +13,5 @@ MonoBehaviour:
   m_Name: BedRoomkey
   m_EditorClassIdentifier: 
   keyName: "\u5BDD\u5BA4\u306E\u9375"
+  explanation: "2\u968E\u306B\u3042\u308B\u5BDD\u5BA4\u306E\u9375\u3060"
   keyID: 2

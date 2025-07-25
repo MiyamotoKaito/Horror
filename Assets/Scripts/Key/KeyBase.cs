@@ -5,5 +5,6 @@ using UnityEngine;
 public class KeyBase : ScriptableObject
 {
     public string keyName;
+    public string explanation;
     public KeyType keyID;
 }
