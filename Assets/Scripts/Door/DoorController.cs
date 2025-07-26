@@ -44,6 +44,7 @@ public class DoorController : MonoBehaviour
             Debug.Log("ドアにぶつかった！！");
             if (GetKey.HasKey(keyType.keyID))//特定の鍵を持っていたらドアを開けれるようにする
             {
+                Debug.Log("鍵がありましたわーい");
                 _inTriger = true;
             }
         }
