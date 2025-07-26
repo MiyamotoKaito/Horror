@@ -8,14 +8,14 @@ using UnityEngine;
 public class EnemySpawn : MonoBehaviour
 {
     [SerializeField] KeyBase keyType;
-    [SerializeField] GameObject enemySpawner;
+    [SerializeField] GameObject enemy;
+    private bool hasActivated = false; // 一度だけ実行するためのフラグ
+
     void Update()
     {
-        gameObject.SetActive(false);
-        if (GetKey.HasKey(keyType.keyID))
+        if (GetKey.HasKey(keyType.keyID))//特定の鍵を持っていたらドアを開けれるようにする
         {
-            Debug.Log("getkey");
-            enemySpawner.SetActive(true);
+            Instantiate(enemy);
         }
     }
 }
