@@ -2,12 +2,12 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    public float moveSpeed = 1.0f;
-    public Transform cameraTransform;
-    public Rigidbody rb;
+    private float _moveSpeed = 1.0f;
+    private Transform _cameraTransform;
+    private Rigidbody _rb;
     void Start()
     {
-        rb = GetComponent<Rigidbody>();
+        _rb = GetComponent<Rigidbody>();
     }
     void FixedUpdate()
     {
@@ -19,8 +19,8 @@ public class PlayerController : MonoBehaviour
         float z = Input.GetAxisRaw("Vertical");
 
         // カメラの方向を基準にした移動ベクトルを計算
-        Vector3 cameraForward = cameraTransform.forward;
-        Vector3 cameraRight = cameraTransform.right;
+        Vector3 cameraForward = _cameraTransform.forward;
+        Vector3 cameraRight = _cameraTransform.right;
 
         // Y軸成分を0にして水平面での移動に制限
         cameraForward.y = 0;
@@ -34,6 +34,6 @@ public class PlayerController : MonoBehaviour
         Vector3 move = cameraRight * x + cameraForward * z;
 
         // Rigidbodyを使用して物理的な移動を実行
-        rb.velocity = move * moveSpeed;
+        _rb.velocity = move * _moveSpeed;
     }
 }
