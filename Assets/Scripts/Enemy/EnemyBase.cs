@@ -3,7 +3,7 @@ using UnityEngine.AI;
 
 public abstract class EnemyBase : MonoBehaviour
 {
-    [SerializeField] private GameObject destination;
+    [SerializeField] protected GameObject destination;
     protected NavMeshAgent Agent { get; private set; }
     void Start()
     {
@@ -11,6 +11,9 @@ public abstract class EnemyBase : MonoBehaviour
     }
     void Update()
     {
-        Agent.SetDestination(destination.transform.position);
+        if (Agent == null)
+        {
+            Debug.LogError("NavMesh‚ª‚È‚¢");
+        }
     }
 }
