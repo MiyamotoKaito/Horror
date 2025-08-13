@@ -6,13 +6,11 @@ public class DangerField : EnemyBase
 {
     [SerializeField] Image fov;
     [SerializeField] private PlayerController playerController;
-    private Animator _anim;
     private float _playerDefaultSpeed;
     protected override void Start()
     {
         base.Start();
         fov.color = Color.clear;
-        _anim = GetComponent<Animator>();
         _playerDefaultSpeed = playerController.MoveSpeed;
     }
     void Update()
@@ -23,10 +21,10 @@ public class DangerField : EnemyBase
     {
         if (other.CompareTag("Player"))
         {
+            _anim.SetBool("Enemy Bend Over", true);
             playerController.SetMoveSpeed(playerController.SlowSpeed);
             Agent.speed = 0f;
             StartCoroutine(Danger(1f));
-            //anim.Play("Down");
         }
         if (other.CompareTag("Destination"))
         {
@@ -38,6 +36,7 @@ public class DangerField : EnemyBase
     {
         if (other.CompareTag("Player"))
         {
+            _anim.SetBool("Enemy Bend Over", false);
             playerController.SetMoveSpeed(_playerDefaultSpeed);
             Agent.speed = 0.5f;
             StopCoroutine(Danger(1f));
