@@ -1,11 +1,10 @@
 using UnityEngine;
 using UnityEngine.AI;
 
-public class EnemyBase : MonoBehaviour
+public abstract class EnemyBase : MonoBehaviour
 {
-    public GameObject destination;
-    public static NavMeshAgent Agent { get; private set; }
-
+    [SerializeField] private GameObject destination;
+    protected NavMeshAgent Agent { get; private set; }
     void Start()
     {
         Agent = GetComponent<NavMeshAgent>();
