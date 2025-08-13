@@ -4,13 +4,15 @@ using UnityEngine.AI;
 public class EnemyBase : MonoBehaviour
 {
     public GameObject destination;
-    public static NavMeshAgent _agent;
+    private static NavMeshAgent agent;
+    public static NavMeshAgent Agent { get => agent; set => agent = value; }
+
     void Start()
     {
-        _agent = GetComponent<NavMeshAgent>();
+        Agent = GetComponent<NavMeshAgent>();
     }
     void Update()
     {
-        _agent.SetDestination(destination.transform.position);
+        Agent.SetDestination(destination.transform.position);
     }
 }
