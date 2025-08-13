@@ -4,8 +4,7 @@ using UnityEngine.AI;
 public class EnemyBase : MonoBehaviour
 {
     public GameObject destination;
-    private static NavMeshAgent agent;
-    public static NavMeshAgent Agent { get => agent; set => agent = value; }
+    public static NavMeshAgent Agent { get; private set; }
 
     void Start()
     {
