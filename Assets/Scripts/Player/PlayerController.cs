@@ -5,9 +5,12 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private Transform cameraTransform;
     [SerializeField] private float moveSpeed = 1.0f;
     private Rigidbody _rb;
+    public float MoveSpeed {get; private set;}
+
     void Start()
     {
         _rb = GetComponent<Rigidbody>();
+        MoveSpeed = moveSpeed;
     }
     void FixedUpdate()
     {
@@ -34,6 +37,10 @@ public class PlayerController : MonoBehaviour
         Vector3 move = cameraRight * x + cameraForward * z;
 
         // Rigidbodyを使用して物理的な移動を実行
-        _rb.velocity = move * moveSpeed;
+        _rb.velocity = move * MoveSpeed;
+    }
+    public void SetMoveSpeed(float speed)
+    {
+        MoveSpeed = speed;
     }
 }
