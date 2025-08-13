@@ -1,5 +1,8 @@
+using UnityEngine;
+
 public class EnemyMove : EnemyBase
 {
+    [SerializeField] protected GameObject destination;
     protected override void Start()
     {
         base.Start();
