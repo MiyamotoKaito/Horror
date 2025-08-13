@@ -6,7 +6,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float moveSpeed = 1.0f;
     private Rigidbody _rb;
     public float MoveSpeed {get; private set;}
-    void Start()
+    void Awake()
     {
         _rb = GetComponent<Rigidbody>();
         MoveSpeed = moveSpeed;
