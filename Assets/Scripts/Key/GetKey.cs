@@ -5,12 +5,28 @@ public class GetKey : MonoBehaviour
 {
     [SerializeField] KeyBase keyType;
     [SerializeField] static List<KeyType> keys = new List<KeyType>();
+    private bool canGetKey;
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.F) && canGetKey)
+        {
+            keys.Add(keyType.keyID);
+            Destroy(gameObject);
+        }
+    }
     void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
         {
-            keys.Add(keyType.keyID);
-            Destroy(gameObject);
+            canGetKey = true;
+        }
+    }
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            canGetKey = false;
         }
     }
     public static bool HasKey(KeyType keyID)
