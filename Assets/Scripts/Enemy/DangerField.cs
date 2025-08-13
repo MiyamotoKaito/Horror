@@ -6,13 +6,12 @@ using UnityEngine.UI;
 public class DangerField : EnemyBase
 {
     [SerializeField] Image image;
-    private Animator anim;
-    private PlayerController playerController;
+    private Animator _anim;
+    private PlayerController _playerController;
     private void Start()
     {
         image.color = Color.clear;
-        anim = GetComponent<Animator>();
-        playerController = GetComponent<PlayerController>();
+        _anim = GetComponent<Animator>();
     }
     void Update()
     {
@@ -22,13 +21,14 @@ public class DangerField : EnemyBase
     {
         if (other.CompareTag("Player"))
         {
+            _playerController.SetMoveSpeed(1f);
             Agent.speed = 0f;
             StartCoroutine(Danger(1f));
             //anim.Play("Down");
         }
         if (other.CompareTag("Destination"))
         {
-            Debug.Log("ä˜Ç…ìñÇΩÇ¡ÇΩ");
+            Debug.Log("óHóÏÇ™è¡Ç¶ÇΩ");
             Destroy(gameObject);
         }
     }
