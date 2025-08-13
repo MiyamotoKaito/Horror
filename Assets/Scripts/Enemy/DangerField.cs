@@ -1,6 +1,5 @@
 using System.Collections;
 using UnityEngine;
-using UnityEngine.Rendering;
 using UnityEngine.UI;
 
 public class DangerField : EnemyBase
@@ -8,10 +7,12 @@ public class DangerField : EnemyBase
     [SerializeField] Image image;
     [SerializeField] private PlayerController _playerController;
     private Animator _anim;
+    private float _playerDefaultSpeed;
     private void Start()
     {
         image.color = Color.clear;
         _anim = GetComponent<Animator>();
+        _playerDefaultSpeed = _playerController.MoveSpeed;
     }
     void Update()
     {
@@ -36,6 +37,7 @@ public class DangerField : EnemyBase
     {
         if (other.CompareTag("Player"))
         {
+            _playerController.SetMoveSpeed(_playerDefaultSpeed);
             Agent.speed = 0.5f;
             StopCoroutine(Danger(1f));
         }

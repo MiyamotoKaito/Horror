@@ -1266,6 +1266,19 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 8065627973788238389, guid: 67ae0972107e9f545863bf4aff22d2e9, type: 3}
   m_PrefabInstance: {fileID: 1851381657}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1318444688
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1318444681}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7ce4538dc1a79a546b300cb7cca13427, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  destination: {fileID: 0}
 --- !u!1 &1356260959
 GameObject:
   m_ObjectHideFlags: 0
@@ -1844,6 +1857,10 @@ PrefabInstance:
       propertyPath: playerController
       value: 
       objectReference: {fileID: 407445981}
+    - target: {fileID: 3011618139247088271, guid: 67ae0972107e9f545863bf4aff22d2e9, type: 3}
+      propertyPath: _playerController
+      value: 
+      objectReference: {fileID: 407445981}
     - target: {fileID: 4426236922093487393, guid: 67ae0972107e9f545863bf4aff22d2e9, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -1895,7 +1912,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 8065627973788238389, guid: 67ae0972107e9f545863bf4aff22d2e9, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1318444688}
   m_SourcePrefab: {fileID: 100100000, guid: 67ae0972107e9f545863bf4aff22d2e9, type: 3}
 --- !u!1 &1856341928
 GameObject:
