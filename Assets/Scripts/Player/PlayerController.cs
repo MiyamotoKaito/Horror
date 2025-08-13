@@ -3,13 +3,16 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     [SerializeField] private Transform cameraTransform;
-    [SerializeField] private float moveSpeed = 1.0f;
+    [SerializeField] private float moveSpeed;
+    [SerializeField] private float slowSpeed;
     private Rigidbody _rb;
-    public float MoveSpeed {get; private set;}
+    public float SlowSpeed { get; private set; }
+    public float MoveSpeed { get; private set; }
     void Awake()
     {
         _rb = GetComponent<Rigidbody>();
         MoveSpeed = moveSpeed;
+        SlowSpeed = slowSpeed;
     }
     void FixedUpdate()
     {
