@@ -23,7 +23,7 @@ public class DangerField : EnemyBase
     {
         if (other.CompareTag("Player"))
         {
-            playerController.SetMoveSpeed(1f);
+            playerController.SetMoveSpeed(playerController.SlowSpeed);
             Agent.speed = 0f;
             StartCoroutine(Danger(1f));
             //anim.Play("Down");
