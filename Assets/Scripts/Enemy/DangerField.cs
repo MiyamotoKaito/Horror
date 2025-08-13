@@ -6,8 +6,8 @@ using UnityEngine.UI;
 public class DangerField : EnemyBase
 {
     [SerializeField] Image image;
+    [SerializeField] private PlayerController _playerController;
     private Animator _anim;
-    private PlayerController _playerController;
     private void Start()
     {
         image.color = Color.clear;
