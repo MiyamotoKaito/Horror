@@ -4,19 +4,20 @@ using UnityEngine.UI;
 
 public class DangerField : EnemyBase
 {
-    [SerializeField] Image image;
+    [SerializeField] Image fov;
     [SerializeField] private PlayerController _playerController;
     private Animator _anim;
     private float _playerDefaultSpeed;
-    private void Start()
+    protected override void Start()
     {
-        image.color = Color.clear;
+        base.Start();
+        fov.color = Color.clear;
         _anim = GetComponent<Animator>();
         _playerDefaultSpeed = _playerController.MoveSpeed;
     }
     void Update()
     {
-        image.color = Color.Lerp(image.color, Color.clear, Time.deltaTime);
+        fov.color = Color.Lerp(fov.color, Color.clear, Time.deltaTime);
     }
     private void OnTriggerEnter(Collider other)
     {
@@ -44,8 +45,7 @@ public class DangerField : EnemyBase
     }
     private IEnumerator Danger(float second)
     {
-        image.color = new Color(1f, 0, 0, 1f);
+        fov.color = new Color(1f, 0, 0, 1f);
         yield return new WaitForSeconds(second);
     }
 }
-
