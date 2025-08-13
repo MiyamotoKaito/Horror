@@ -5,7 +5,7 @@ using UnityEngine.UI;
 public class DangerField : EnemyBase
 {
     [SerializeField] Image fov;
-    [SerializeField] private PlayerController _playerController;
+    [SerializeField] private PlayerController playerController;
     private Animator _anim;
     private float _playerDefaultSpeed;
     protected override void Start()
@@ -13,7 +13,7 @@ public class DangerField : EnemyBase
         base.Start();
         fov.color = Color.clear;
         _anim = GetComponent<Animator>();
-        _playerDefaultSpeed = _playerController.MoveSpeed;
+        _playerDefaultSpeed = playerController.MoveSpeed;
     }
     void Update()
     {
@@ -23,7 +23,7 @@ public class DangerField : EnemyBase
     {
         if (other.CompareTag("Player"))
         {
-            _playerController.SetMoveSpeed(1f);
+            playerController.SetMoveSpeed(1f);
             Agent.speed = 0f;
             StartCoroutine(Danger(1f));
             //anim.Play("Down");
@@ -38,7 +38,7 @@ public class DangerField : EnemyBase
     {
         if (other.CompareTag("Player"))
         {
-            _playerController.SetMoveSpeed(_playerDefaultSpeed);
+            playerController.SetMoveSpeed(_playerDefaultSpeed);
             Agent.speed = 0.5f;
             StopCoroutine(Danger(1f));
         }
