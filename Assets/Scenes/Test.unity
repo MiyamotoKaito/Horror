@@ -2810,6 +2810,10 @@ PrefabInstance:
       value: Ghost
       objectReference: {fileID: 0}
     - target: {fileID: 6269106312572558987, guid: f6660e015fb250d428a83093d6545dc0, type: 3}
+      propertyPath: serializeData.wind.blend
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6269106312572558987, guid: f6660e015fb250d428a83093d6545dc0, type: 3}
       propertyPath: serializeData.wind.influence
       value: 1
       objectReference: {fileID: 0}
