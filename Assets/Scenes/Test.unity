@@ -1844,6 +1844,10 @@ PrefabInstance:
       propertyPath: playerController
       value: 
       objectReference: {fileID: 407445981}
+    - target: {fileID: 4426236922093487393, guid: 67ae0972107e9f545863bf4aff22d2e9, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: e9446729876fa7045a97a8b8ec07a12e, type: 2}
     - target: {fileID: 8065627973788238389, guid: 67ae0972107e9f545863bf4aff22d2e9, type: 3}
       propertyPath: m_Name
       value: Ghost
