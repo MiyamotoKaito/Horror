@@ -1,27 +1,27 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.Rendering;
 using UnityEngine.UI;
 
 public class DangerField : EnemyBase
 {
     [SerializeField] Image image;
-    public Animator anim;
-    public PlayerController playerController;
+    private Animator anim;
+    private PlayerController playerController;
     private void Start()
     {
         image.color = Color.clear;
+        anim = GetComponent<Animator>();
         playerController = GetComponent<PlayerController>();
     }
     void Update()
     {
         image.color = Color.Lerp(image.color, Color.clear, Time.deltaTime);
-
     }
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
         {
-            Time.timeScale = 0.2f;
             Agent.speed = 0f;
             StartCoroutine(Danger(1f));
             //anim.Play("Down");
@@ -36,7 +36,6 @@ public class DangerField : EnemyBase
     {
         if (other.CompareTag("Player"))
         {
-            Time.timeScale = 1f;
             Agent.speed = 0.5f;
             StopCoroutine(Danger(1f));
         }
