@@ -7,9 +7,8 @@ using UnityEngine;
 
 public class EnemySpawn : MonoBehaviour
 {
-    [SerializeField] KeyBase keyType;
-    [SerializeField] GameObject enemy;
-    private bool hasActivated = false; // 一度だけ実行するためのフラグ
+    [SerializeField] private KeyBase keyType;
+    [SerializeField] private GameObject enemy;
 
     private void Start()
     {
