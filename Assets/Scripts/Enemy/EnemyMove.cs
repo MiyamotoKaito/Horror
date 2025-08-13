@@ -10,5 +10,6 @@ public class EnemyMove : EnemyBase
     public void Update()
     {
         Agent.SetDestination(destination.transform.position);
+        _anim.SetFloat("EnemyMove", Agent.speed);
     }
 }
