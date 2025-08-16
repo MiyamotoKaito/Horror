@@ -13,7 +13,7 @@ public class Raycast : MonoBehaviour
     [SerializeField] private Text keyExplanationText;
     void Start()
     {
-
+        keyInfo.SetActive(false);
     }
     void Update()
     {
@@ -24,14 +24,14 @@ public class Raycast : MonoBehaviour
             GetKey itemInfo = hit.collider.GetComponent<GetKey>();
             if (itemInfo != null && itemInfo.KeyType != null)
             {
+                keyInfo.SetActive(true);
+                keyNameText.text = itemInfo.KeyType.keyName;
+                keyExplanationText.text = itemInfo.KeyType.explanation;
+            }
+            else if (hit.collider.CompareTag("GameOver"))
+            {
 
             }
-
         }
-    }
-
-    private void GameOver()
-    {
-
     }
 }
