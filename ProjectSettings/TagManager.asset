@@ -8,6 +8,7 @@ TagManager:
   - Destination
   - Key
   - PlayerRaycast
+  - GameOver
   layers:
   - Default
   - TransparentFX
