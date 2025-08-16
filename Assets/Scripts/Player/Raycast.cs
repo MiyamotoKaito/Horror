@@ -12,10 +12,13 @@ public class Raycast : MonoBehaviour
     [SerializeField] private GameObject keyInfo;
     [SerializeField] private Text keyNameText;
     [SerializeField] private Text keyExplanationText;
-    [SerializeField] private GameObject Key;
+    [SerializeField] private GameObject KeyDisplayObject;
+
+    private GameObject currentKeyObject;
     void Start()
     {
         keyInfo.SetActive(false);
+        KeyDisplayObject.SetActive(false);
     }
     void Update()
     {
@@ -23,22 +26,48 @@ public class Raycast : MonoBehaviour
         RaycastHit hit;
         if (Physics.Raycast(ray, out hit, raycastDistance))
         {
+            Debug.DrawRay(ray.origin, ray.direction, Color.red);
             GetKey itemInfo = hit.collider.GetComponent<GetKey>();
             if (itemInfo != null && itemInfo.KeyType != null)
             {
-                keyInfo.SetActive(true);
+                //UIが非アクティブの時だけに表示する
+                if (!keyInfo.activeInHierarchy)
+                {
+                    keyInfo.SetActive(true);
+                    KeyDisplayObject.SetActive(true);
+                }
+
+                //鍵の情報をUI上に表示
                 keyNameText.text = itemInfo.KeyType.keyName;
                 keyExplanationText.text = itemInfo.KeyType.explanation;
+                KeyDisplayObject = itemInfo.KeyType.KeyObject;
+
+                //鍵の取得と同時にUIを非表示にする
                 if (Input.GetKeyDown(KeyCode.F))
                 {
                     keyInfo.SetActive(false);
+                    KeyDisplayObject.SetActive(false);
+
+                    if (currentKeyObject != null)
+                    {
+                        DestroyImmediate(currentKeyObject);
+                        currentKeyObject = null;
+                    }
                 }
             }
+            if (hit.collider.CompareTag("GameOver"))
+            {
+                EyeContact enemyFace = FindObjectOfType<EyeContact>();
+                enemyFace.GameOver();
+            }
         }
-        if (hit.collider.CompareTag("GameOver"))
+        else
         {
-            EyeContact enemyFace = FindObjectOfType<EyeContact>();
-            enemyFace.GameOver();
+            if (keyInfo.activeInHierarchy)
+            {
+                keyInfo.SetActive(false);
+                KeyDisplayObject.SetActive(false);
+            }
         }
     }
 }
