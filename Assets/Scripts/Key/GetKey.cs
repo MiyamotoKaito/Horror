@@ -3,15 +3,17 @@ using UnityEngine;
 
 public class GetKey : MonoBehaviour
 {
-    [SerializeField] KeyBase keyType;
-    [SerializeField] static List<KeyType> keys = new List<KeyType>();
+    [SerializeField] private KeyBase keyType;
+    [SerializeField] private static List<KeyType> keys = new List<KeyType>();
     private bool canGetKey;
+
+    public KeyBase KeyType { get => keyType; set => keyType = value; }
 
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.F) && canGetKey)
         {
-            keys.Add(keyType.keyID);
+            keys.Add(KeyType.keyID);
             Destroy(gameObject);
         }
     }
