@@ -3,21 +3,31 @@ using UnityEngine.UI;
 
 public class Raycast : MonoBehaviour
 {
-    [SerializeField] KeyBase keyType;
-    [SerializeField] Text explanation;
-    private Vector3 origin = new Vector3(0, 0, 0);
-    public Vector3 direction = new Vector3(1, 0, 0);
+    [Header("レイキャスト設定")]
+    [SerializeField] private Camera povCamera;
+    [SerializeField] private float raycastDistance;
+
+    [Header("UI設定")]
+    [SerializeField] private GameObject keyInfo;
+    [SerializeField] private Text keyNameText;
+    [SerializeField] private Text keyExplanationText;
     void Start()
     {
 
     }
     void Update()
     {
-        Ray ray = new Ray(origin, direction);
-        Raycast hit = GetComponent<Raycast>();
-        if (hit.CompareTag("Key"))
+        Ray ray = povCamera.ScreenPointToRay(new Vector3(Screen.width / 2, Screen.height / 2, 0));
+        RaycastHit hit;
+        if (Physics.Raycast(ray, out hit, raycastDistance))
         {
-            explanation.text = keyType.explanation;
+
         }
+            
+    }
+
+    private void GameOver()
+    {
+        
     }
 }
