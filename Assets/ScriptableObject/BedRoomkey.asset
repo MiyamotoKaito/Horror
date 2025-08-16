@@ -15,3 +15,4 @@ MonoBehaviour:
   keyName: "\u5BDD\u5BA4\u306E\u9375"
   explanation: "2\u968E\u306B\u3042\u308B\u5BDD\u5BA4\u306E\u9375\u3060"
   keyID: 2
+  KeyObject: {fileID: 8628852492417631145, guid: 9efdc3aa3017dfe44ab83bc94c21f446, type: 3}
