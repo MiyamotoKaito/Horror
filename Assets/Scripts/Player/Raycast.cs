@@ -11,6 +11,7 @@ public class Raycast : MonoBehaviour
     [SerializeField] private GameObject keyInfo;
     [SerializeField] private Text keyNameText;
     [SerializeField] private Text keyExplanationText;
+    [SerializeField] private GameObject KeyObject;
     void Start()
     {
         keyInfo.SetActive(false);
