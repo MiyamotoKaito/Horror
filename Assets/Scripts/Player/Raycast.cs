@@ -21,13 +21,17 @@ public class Raycast : MonoBehaviour
         RaycastHit hit;
         if (Physics.Raycast(ray, out hit, raycastDistance))
         {
+            GetKey itemInfo = hit.collider.GetComponent<GetKey>();
+            if (itemInfo != null && itemInfo.KeyType != null)
+            {
+
+            }
 
         }
-            
     }
 
     private void GameOver()
     {
-        
+
     }
 }
