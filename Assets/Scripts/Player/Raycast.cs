@@ -1,3 +1,4 @@
+using Unity.VisualScripting.InputSystem;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -11,7 +12,7 @@ public class Raycast : MonoBehaviour
     [SerializeField] private GameObject keyInfo;
     [SerializeField] private Text keyNameText;
     [SerializeField] private Text keyExplanationText;
-    [SerializeField] private GameObject KeyObject;
+    [SerializeField] private GameObject Key;
     void Start()
     {
         keyInfo.SetActive(false);
@@ -28,6 +29,10 @@ public class Raycast : MonoBehaviour
                 keyInfo.SetActive(true);
                 keyNameText.text = itemInfo.KeyType.keyName;
                 keyExplanationText.text = itemInfo.KeyType.explanation;
+                if (Input.GetKeyDown(KeyCode.F))
+                {
+                    keyInfo.SetActive(false);
+                }
             }
         }
         if (hit.collider.CompareTag("GameOver"))
