@@ -20,6 +20,5 @@ public abstract class EnemyBase : MonoBehaviour
     public void GameOver()
     {
         gameOver.SetActive(true);
-
     }
 }
