@@ -12,7 +12,7 @@ public class Raycast : MonoBehaviour
     [SerializeField] private Text keyNameText;
     [SerializeField] private Text keyExplanationText;
     void Start()
-    { 
+    {
         keyInfo.SetActive(false);
     }
     void Update()
@@ -31,7 +31,7 @@ public class Raycast : MonoBehaviour
         }
         if (hit.collider.CompareTag("GameOver"))
         {
-            EnemyBase enemyFace = FindObjectOfType<EnemyBase>();
+            EyeContact enemyFace = FindObjectOfType<EyeContact>();
             enemyFace.GameOver();
         }
     }
