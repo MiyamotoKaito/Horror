@@ -14,12 +14,20 @@ public class Raycast : MonoBehaviour
     [SerializeField] private Text keyNameText;
     [SerializeField] private Text keyExplanationText;
     [SerializeField] private RawImage KeyDisplay;
+
+    private bool _hasCollectedKey = false;//鍵を取得していたらUIを表示できないようにするフラグ
     void Start()
     {
         keyInfo.SetActive(false);
     }
     void Update()
     {
+        //鍵を取得していたらUIを表示しない
+        if (_hasCollectedKey)
+        {
+            return;
+        }
+
         Ray ray = povCamera.ScreenPointToRay(new Vector3(Screen.width / 2, Screen.height / 2, 0));
         RaycastHit hit;
         if (Physics.Raycast(ray, out hit, raycastDistance))
@@ -43,6 +51,7 @@ public class Raycast : MonoBehaviour
                 //鍵の取得と同時にUIを非表示にする
                 if (Input.GetKeyDown(KeyCode.F))
                 {
+                    _hasCollectedKey = true;
                     keyInfo.SetActive(false);
                     Debug.Log("鍵げっちゅ");
                 }
