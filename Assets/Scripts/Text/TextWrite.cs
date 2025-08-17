@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.InteropServices;
 using TMPro;
 using UnityEngine;
 using UnityEngine.Events;
@@ -23,9 +24,33 @@ public class TextWrite : MonoBehaviour
         //前回の処理が走っていたら停止
         if (_coroutine != null)
         {
-            StopCoroutine();
+            StopCoroutine(ShowCoroutine());
         }
 
-        _coroutine = StartCoroutine();
+        _coroutine = StartCoroutine(ShowCoroutine());
+    }
+    private IEnumerator ShowCoroutine()
+    {
+        //次の文字を表示させるための待機時間
+        var delay = new WaitForSeconds(writeSpeed);
+        
+        //テキスト全体の長さ
+        var nameLength = keyName.text.Length;
+        var explanationLength = keyExplation.text.Length;
+
+        //一文字ずつ表示する
+        for (int i = 0; i < nameLength; i++)
+        {
+            keyName.maxVisibleCharacters = i;
+            keyExplation.maxVisibleCharacters = i;
+
+            //一定時間待機
+            yield return delay;
+        }
+
+        keyName.maxVisibleCharacters = nameLength;
+        keyExplation.maxVisibleCharacters = explanationLength;
+
+        _coroutine = null;
     }
 }
