@@ -4,9 +4,11 @@ using UnityEngine;
 
 public class UIKey : MonoBehaviour
 {
-    [SerializeField] private float rotateY;    
+    [SerializeField] private Vector3 axis = Vector3.up;//âÒì]é≤
+    [SerializeField] private GameObject uiKey;//íÜêSì_
+    [SerializeField] private float rotationSpeed;
     private void FixedUpdate()
     {
-        this.gameObject.transform.Rotate(new Vector3(0, rotateY, 0) * Time.deltaTime);
+        transform.RotateAround(gameObject.transform.position, axis, rotationSpeed * Time.deltaTime);
     }
 }
