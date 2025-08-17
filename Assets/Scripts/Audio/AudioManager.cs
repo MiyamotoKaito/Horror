@@ -34,5 +34,15 @@ public class AudioManager : MonoBehaviour
 
         _audioSourse = GetComponent<AudioSource>();
     }
-
+    public void SEPlay(string name)
+    {
+        foreach (SoundClip clip in seList)
+        {
+            if (clip.Name == name)
+            {
+                _audioSourse.PlayOneShot(clip.Clip);
+                break;
+            }
+        }
+    }
 }
