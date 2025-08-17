@@ -13,4 +13,14 @@ public class TextWrite : MonoBehaviour
     [Header("読み込む速度")]
     [SerializeField] private float writeSpeed;
 
+    private Coroutine _coroutine;
+
+    public void WriteText()
+    {
+        //前回の処理が走っていたら停止
+        if (_coroutine != null)
+        {
+            StopCoroutine(_coroutine);
+        }
+    }
 }
