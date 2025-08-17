@@ -11,8 +11,8 @@ public class Raycast : MonoBehaviour
 
     [Header("UI設定")]
     [SerializeField] private GameObject keyInfo;
-    [SerializeField] private Text keyNameText;
-    [SerializeField] private Text keyExplanationText;
+    [SerializeField] private TextMesh keyNameText;
+    [SerializeField] private TextMesh keyExplanationText;
     [SerializeField] private RawImage KeyDisplay;
 
     void Start()
