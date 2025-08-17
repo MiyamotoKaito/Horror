@@ -22,11 +22,6 @@ public class Raycast : MonoBehaviour
     }
     void Update()
     {
-        //鍵を取得していたらUIを表示しない
-        if (_hasCollectedKey)
-        {
-            return;
-        }
 
         Ray ray = povCamera.ScreenPointToRay(new Vector3(Screen.width / 2, Screen.height / 2, 0));
         RaycastHit hit;
@@ -52,6 +47,7 @@ public class Raycast : MonoBehaviour
                 if (Input.GetKeyDown(KeyCode.F))
                 {
                     _hasCollectedKey = true;
+                    itemInfo.gameObject.SetActive(false);
                     keyInfo.SetActive(false);
                     Debug.Log("鍵げっちゅ");
                 }
