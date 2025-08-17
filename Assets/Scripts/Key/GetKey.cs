@@ -13,14 +13,16 @@ public class GetKey : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.F) && canGetKey)
         {
+            Debug.Log("鍵を入手");
             keys.Add(KeyType.keyID);
-           this.gameObject.SetActive(false);
+            //Destroy(gameObject);
         }
     }
     void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
         {
+            Debug.Log("鍵取れるよ");
             canGetKey = true;
         }
     }
