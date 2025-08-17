@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: LivingKey
   m_EditorClassIdentifier: 
   keyName: "\u30EA\u30D3\u30F3\u30B0\u306E\u9375"
-  explanation: "\u30EA\u30D3\u30F3\u30B0\u306E\u30C9\u30A2\u3092\u958B\u3051\u308B\u305F\u3081\u306E\u9375\u3060"
+  explanation: "\u30EA\u30D3\u30F3\u30B0\u306E\u30C9\u30A2\u3092\u958B\u3051\u308B\u305F\u3081\u306E\u9375\u3060\n\u5BD2\u6C17\u304C\u3059\u308B"
   keyID: 1
   KeyTexture: {fileID: 8400000, guid: 715c8d2a599a45c4c99d5486ada8366e, type: 2}
