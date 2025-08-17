@@ -1,4 +1,5 @@
-﻿using Unity.VisualScripting;
+﻿using TMPro;
+using Unity.VisualScripting;
 using Unity.VisualScripting.InputSystem;
 using UnityEngine;
 using UnityEngine.UI;
@@ -11,8 +12,8 @@ public class Raycast : MonoBehaviour
 
     [Header("UI設定")]
     [SerializeField] private GameObject keyInfo;
-    [SerializeField] private TextMesh keyNameText;
-    [SerializeField] private TextMesh keyExplanationText;
+    [SerializeField] private TextMeshProUGUI keyNameText;
+    [SerializeField] private TextMeshProUGUI keyExplanationText;
     [SerializeField] private RawImage KeyDisplay;
 
     void Start()
