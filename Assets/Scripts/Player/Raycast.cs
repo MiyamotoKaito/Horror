@@ -1,15 +1,15 @@
-using Unity.VisualScripting;
+ï»¿using Unity.VisualScripting;
 using Unity.VisualScripting.InputSystem;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class Raycast : MonoBehaviour
 {
-    [Header("ƒŒƒCƒLƒƒƒXƒgİ’è")]
+    [Header("ãƒ¬ã‚¤ã‚­ãƒ£ã‚¹ãƒˆè¨­å®š")]
     [SerializeField] private Camera povCamera;
     [SerializeField] private float raycastDistance;
 
-    [Header("UIİ’è")]
+    [Header("UIè¨­å®š")]
     [SerializeField] private GameObject keyInfo;
     [SerializeField] private Text keyNameText;
     [SerializeField] private Text keyExplanationText;
@@ -28,23 +28,23 @@ public class Raycast : MonoBehaviour
             GetKey itemInfo = hit.collider.GetComponent<GetKey>();
             if (itemInfo != null && itemInfo.KeyType != null)
             {
-                //UI‚ª”ñƒAƒNƒeƒBƒu‚Ì‚¾‚¯‚É•\¦‚·‚é
+                //UIãŒéã‚¢ã‚¯ãƒ†ã‚£ãƒ–ã®æ™‚ã ã‘ã«è¡¨ç¤ºã™ã‚‹
                 if (!keyInfo.activeInHierarchy)
                 {
                     keyInfo.SetActive(true);
-                    Debug.Log("UI•\¦‚³‚ê‚Ä‚é‚æ");
+                    Debug.Log("UIè¡¨ç¤ºã•ã‚Œã¦ã‚‹ã‚ˆ");
                 }
 
-                //Œ®‚Ìî•ñ‚ğUIã‚É•\¦
+                //éµã®æƒ…å ±ã‚’UIä¸Šã«è¡¨ç¤º
                 keyNameText.text = itemInfo.KeyType.keyName;
                 keyExplanationText.text = itemInfo.KeyType.explanation;
                 KeyDisplay.texture = itemInfo.KeyType.KeyTexture;
 
-                //Œ®‚Ìæ“¾‚Æ“¯‚ÉUI‚ğ”ñ•\¦‚É‚·‚é
+                //éµã®å–å¾—ã¨åŒæ™‚ã«UIã‚’éè¡¨ç¤ºã«ã™ã‚‹
                 if (Input.GetKeyDown(KeyCode.F))
                 {
                     keyInfo.SetActive(false);
-                    Debug.Log("Œ®‚°‚Á‚¿‚ã");
+                    Debug.Log("éµã’ã£ã¡ã‚…");
                 }
             }
             if (hit.collider.CompareTag("GameOver"))
@@ -58,7 +58,7 @@ public class Raycast : MonoBehaviour
             if (keyInfo.activeInHierarchy)
             {
                 keyInfo.SetActive(false);
-                Debug.Log("Œ®‚©‚ç—£‚ê‚½");
+                Debug.Log("éµã‹ã‚‰é›¢ã‚ŒãŸ");
             }
         }
     }

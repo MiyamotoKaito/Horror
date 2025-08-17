@@ -15,4 +15,4 @@ MonoBehaviour:
   keyName: "\u30EA\u30D3\u30F3\u30B0\u306E\u9375"
   explanation: "\u30EA\u30D3\u30F3\u30B0\u3092\u958B\u3051\u308B\u305F\u3081\u306E\u9375\u3060"
   keyID: 1
-  KeyObject: {fileID: 8400000, guid: 715c8d2a599a45c4c99d5486ada8366e, type: 2}
+  KeyTexture: {fileID: 8400000, guid: 715c8d2a599a45c4c99d5486ada8366e, type: 2}
