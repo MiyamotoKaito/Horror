@@ -15,7 +15,6 @@ public class Raycast : MonoBehaviour
     [SerializeField] private Text keyExplanationText;
     [SerializeField] private RawImage KeyDisplay;
 
-    private bool _hasCollectedKey = false;//鍵を取得していたらUIを表示できないようにするフラグ
     void Start()
     {
         keyInfo.SetActive(false);
@@ -46,8 +45,6 @@ public class Raycast : MonoBehaviour
                 //鍵の取得と同時にUIを非表示にする
                 if (Input.GetKeyDown(KeyCode.F))
                 {
-                    _hasCollectedKey = true;
-                    itemInfo.gameObject.SetActive(false);
                     keyInfo.SetActive(false);
                     Debug.Log("鍵げっちゅ");
                 }

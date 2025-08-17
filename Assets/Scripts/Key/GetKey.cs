@@ -15,7 +15,7 @@ public class GetKey : MonoBehaviour
         {
             Debug.Log("鍵を入手");
             keys.Add(KeyType.keyID);
-            //Destroy(gameObject);
+            Destroy(gameObject);
         }
     }
     void OnTriggerEnter(Collider other)
