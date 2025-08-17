@@ -15,12 +15,17 @@ public class TextWrite : MonoBehaviour
 
     private Coroutine _coroutine;
 
+    /// <summary>
+    /// 文字送りの演出
+    /// </summary>
     public void WriteText()
     {
         //前回の処理が走っていたら停止
         if (_coroutine != null)
         {
-            StopCoroutine(_coroutine);
+            StopCoroutine();
         }
+
+        _coroutine = StartCoroutine();
     }
 }
