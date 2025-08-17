@@ -14,8 +14,6 @@ public class Raycast : MonoBehaviour
     [SerializeField] private Text keyNameText;
     [SerializeField] private Text keyExplanationText;
     [SerializeField] private RawImage KeyDisplay;
-
-    private GameObject currentKeyObject;
     void Start()
     {
         keyInfo.SetActive(false);
@@ -34,6 +32,7 @@ public class Raycast : MonoBehaviour
                 if (!keyInfo.activeInHierarchy)
                 {
                     keyInfo.SetActive(true);
+                    Debug.Log("UIï\é¶Ç≥ÇÍÇƒÇÈÇÊ");
                 }
 
                 //åÆÇÃèÓïÒÇUIè„Ç…ï\é¶
@@ -45,12 +44,7 @@ public class Raycast : MonoBehaviour
                 if (Input.GetKeyDown(KeyCode.F))
                 {
                     keyInfo.SetActive(false);
-
-                    if (currentKeyObject != null)
-                    {
-                        DestroyImmediate(currentKeyObject);
-                        currentKeyObject = null;
-                    }
+                    Debug.Log("åÆÇ∞Ç¡ÇøÇ„");
                 }
             }
             if (hit.collider.CompareTag("GameOver"))
@@ -64,6 +58,7 @@ public class Raycast : MonoBehaviour
             if (keyInfo.activeInHierarchy)
             {
                 keyInfo.SetActive(false);
+                Debug.Log("åÆÇ©ÇÁó£ÇÍÇΩ");
             }
         }
     }
