@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: CorriderKey
   m_EditorClassIdentifier: 
   keyName: "\u5ECA\u4E0B\u306E\u9375"
-  explanation: "\u5ECA\u4E0B\u306B\u884C\u304F\u305F\u3081\u306E\u9375\u3060"
+  explanation: "\u5ECA\u4E0B\u306B\u884C\u304F\u305F\u3081\u306E\u9375\u3060\n\u30AB\u30C3\u30B3\u30A4\u30A4"
   keyID: 0
   KeyTexture: {fileID: 8400000, guid: 2bcadaec17f44e142b5e4969fc594913, type: 2}
