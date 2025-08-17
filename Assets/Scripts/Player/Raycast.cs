@@ -2,6 +2,7 @@
 using Unity.VisualScripting;
 using Unity.VisualScripting.InputSystem;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.UI;
 
 public class Raycast : MonoBehaviour
@@ -15,6 +16,8 @@ public class Raycast : MonoBehaviour
     [SerializeField] private TextMeshProUGUI keyNameText;
     [SerializeField] private TextMeshProUGUI keyExplanationText;
     [SerializeField] private RawImage KeyDisplay;
+
+    public UnityEvent _action;
 
     void Start()
     {
@@ -35,6 +38,7 @@ public class Raycast : MonoBehaviour
                 if (!keyInfo.activeInHierarchy)
                 {
                     keyInfo.SetActive(true);
+                    _action.Invoke();
                     Debug.Log("UI表示されてるよ");
                 }
 
