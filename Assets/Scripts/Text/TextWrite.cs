@@ -7,4 +7,6 @@ using UnityEngine.Events;
 public class TextWrite : MonoBehaviour
 {
     [SerializeField] private TextMeshProUGUI keyName;
+    [SerializeField] private TextMeshProUGUI keyExplation;
+
 }
