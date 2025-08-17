@@ -8,5 +8,5 @@ public class KeyBase : ScriptableObject
     [TextArea(5,10)]
     public string explanation;
     public KeyType keyID;
-    public GameObject KeyObject;
+    public RenderTexture KeyObject;
 }
