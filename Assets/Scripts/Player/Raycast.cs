@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using Unity.VisualScripting.InputSystem;
 using UnityEngine;
 using UnityEngine.UI;
@@ -12,13 +13,12 @@ public class Raycast : MonoBehaviour
     [SerializeField] private GameObject keyInfo;
     [SerializeField] private Text keyNameText;
     [SerializeField] private Text keyExplanationText;
-    [SerializeField] private GameObject KeyDisplayObject;
+    [SerializeField] private RawImage KeyDisplay;
 
     private GameObject currentKeyObject;
     void Start()
     {
         keyInfo.SetActive(false);
-        KeyDisplayObject.SetActive(false);
     }
     void Update()
     {
@@ -34,19 +34,17 @@ public class Raycast : MonoBehaviour
                 if (!keyInfo.activeInHierarchy)
                 {
                     keyInfo.SetActive(true);
-                    KeyDisplayObject.SetActive(true);
                 }
 
                 //åÆÇÃèÓïÒÇUIè„Ç…ï\é¶
                 keyNameText.text = itemInfo.KeyType.keyName;
                 keyExplanationText.text = itemInfo.KeyType.explanation;
-                KeyDisplayObject = itemInfo.KeyType.KeyObject;
+                KeyDisplay.texture = itemInfo.KeyType.KeyObject;
 
                 //åÆÇÃéÊìæÇ∆ìØéûÇ…UIÇîÒï\é¶Ç…Ç∑ÇÈ
                 if (Input.GetKeyDown(KeyCode.F))
                 {
                     keyInfo.SetActive(false);
-                    KeyDisplayObject.SetActive(false);
 
                     if (currentKeyObject != null)
                     {
@@ -66,7 +64,6 @@ public class Raycast : MonoBehaviour
             if (keyInfo.activeInHierarchy)
             {
                 keyInfo.SetActive(false);
-                KeyDisplayObject.SetActive(false);
             }
         }
     }
