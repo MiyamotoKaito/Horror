@@ -14,7 +14,7 @@ public class GetKey : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.F) && canGetKey)
         {
             keys.Add(KeyType.keyID);
-            Destroy(gameObject);
+           this.gameObject.SetActive(false);
         }
     }
     void OnTriggerEnter(Collider other)
