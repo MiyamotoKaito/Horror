@@ -9,6 +9,6 @@ public class UIKey : MonoBehaviour
     [SerializeField] private float rotationSpeed;
     private void FixedUpdate()
     {
-        transform.RotateAround(gameObject.transform.position, axis, rotationSpeed * Time.deltaTime);
+        transform.RotateAround(uiKey.transform.position, axis, rotationSpeed * Time.deltaTime);
     }
 }
