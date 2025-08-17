@@ -16,7 +16,7 @@ public class EnemySpawn : MonoBehaviour
     }
     void Update()
     {
-        if (GetKey.HasKey(keyType.keyID))//特定の鍵を持っていたらドアを開けれるようにする
+        if (GetKey.HasKey(keyType.keyID))//特定の鍵をプレイヤーが入手したらエネミーをスポーンさせる
         {
             enemy.SetActive(true);
         }
