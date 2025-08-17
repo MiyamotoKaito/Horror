@@ -1,4 +1,4 @@
-using UnityEngine;
+ï»¿using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
@@ -23,22 +23,22 @@ public class PlayerController : MonoBehaviour
         float x = Input.GetAxisRaw("Horizontal");
         float z = Input.GetAxisRaw("Vertical");
 
-        // ƒJƒƒ‰‚Ì•ûŒü‚ğŠî€‚É‚µ‚½ˆÚ“®ƒxƒNƒgƒ‹‚ğŒvZ
+        // ã‚«ãƒ¡ãƒ©ã®æ–¹å‘ã‚’åŸºæº–ã«ã—ãŸç§»å‹•ãƒ™ã‚¯ãƒˆãƒ«ã‚’è¨ˆç®—
         Vector3 cameraForward = cameraTransform.forward;
         Vector3 cameraRight = cameraTransform.right;
 
-        // Y²¬•ª‚ğ0‚É‚µ‚Ä…•½–Ê‚Å‚ÌˆÚ“®‚É§ŒÀ
+        // Yè»¸æˆåˆ†ã‚’0ã«ã—ã¦æ°´å¹³é¢ã§ã®ç§»å‹•ã«åˆ¶é™
         cameraForward.y = 0;
         cameraRight.y = 0;
 
-        // ³‹K‰»‚µ‚Äˆê’è‚Ì‘¬“x‚ğ•Û‚Â
+        // æ­£è¦åŒ–ã—ã¦ä¸€å®šã®é€Ÿåº¦ã‚’ä¿ã¤
         cameraForward = cameraForward.normalized;
         cameraRight = cameraRight.normalized;
 
-        // ƒJƒƒ‰‚Ì•ûŒüŠî€‚ÅˆÚ“®ƒxƒNƒgƒ‹‚ğŒvZiW/S‚ÅƒJƒƒ‰‚ÌŒü‚«‚ÉˆÚ“®AA/D‚Å¶‰EˆÚ“®j
+        // ã‚«ãƒ¡ãƒ©ã®æ–¹å‘åŸºæº–ã§ç§»å‹•ãƒ™ã‚¯ãƒˆãƒ«ã‚’è¨ˆç®—ï¼ˆW/Sã§ã‚«ãƒ¡ãƒ©ã®å‘ãã«ç§»å‹•ã€A/Dã§å·¦å³ç§»å‹•ï¼‰
         Vector3 move = cameraRight * x + cameraForward * z;
 
-        // Rigidbody‚ğg—p‚µ‚Ä•¨—“I‚ÈˆÚ“®‚ğÀs
+        // Rigidbodyã‚’ä½¿ç”¨ã—ã¦ç‰©ç†çš„ãªç§»å‹•ã‚’å®Ÿè¡Œ
         _rb.velocity = move * MoveSpeed;
     }
     public void SetMoveSpeed(float speed)

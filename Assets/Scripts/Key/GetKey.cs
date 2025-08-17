@@ -1,4 +1,4 @@
-using System.Collections.Generic;
+ï»¿using System.Collections.Generic;
 using UnityEngine;
 
 public class GetKey : MonoBehaviour
@@ -33,6 +33,6 @@ public class GetKey : MonoBehaviour
     }
     public static bool HasKey(KeyType keyID)
     {
-        return keys.Contains(keyID);//“Á’è‚ÌƒL[‚ğ‚Á‚Ä‚¢‚é‚©ƒ`ƒFƒbƒN‚·‚éƒƒ\ƒbƒh
+        return keys.Contains(keyID);//ç‰¹å®šã®ã‚­ãƒ¼ã‚’æŒã£ã¦ã„ã‚‹ã‹ãƒã‚§ãƒƒã‚¯ã™ã‚‹ãƒ¡ã‚½ãƒƒãƒ‰
     }
 }

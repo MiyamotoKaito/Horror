@@ -1,11 +1,11 @@
-using System.Collections;
+ï»¿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class UIKey : MonoBehaviour
 {
-    [SerializeField] private Vector3 axis = Vector3.up;//‰ñ“]²
-    [SerializeField] private GameObject uiKey;//’†S“_
+    [SerializeField] private Vector3 axis = Vector3.up;//å›è»¢è»¸
+    [SerializeField] private GameObject uiKey;//ä¸­å¿ƒç‚¹
     [SerializeField] private float rotationSpeed;
     private void FixedUpdate()
     {

@@ -1,4 +1,4 @@
-using System.Collections;
+ï»¿using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -28,7 +28,7 @@ public class DangerField : EnemyBase
         }
         if (other.CompareTag("Destination"))
         {
-            Debug.Log("—H—ì‚ªÁ‚¦‚½");
+            Debug.Log("å¹½éœŠãŒæ¶ˆãˆãŸ");
             Destroy(gameObject);
         }
     }

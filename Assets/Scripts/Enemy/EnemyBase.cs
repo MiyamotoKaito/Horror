@@ -1,4 +1,4 @@
-using UnityEngine;
+ï»¿using UnityEngine;
 using UnityEngine.AI;
 
 public abstract class EnemyBase : MonoBehaviour
@@ -11,7 +11,7 @@ public abstract class EnemyBase : MonoBehaviour
         Agent = GetComponent<NavMeshAgent>();
         if (Agent == null)
         {
-            Debug.LogError("NavMesh‚ª‚È‚¢");
+            Debug.LogError("NavMeshãŒãªã„");
         }
     }
 }
