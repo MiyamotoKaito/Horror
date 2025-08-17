@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: BedRoomkey
   m_EditorClassIdentifier: 
   keyName: "\u5BDD\u5BA4\u306E\u9375"
-  explanation: "2\u968E\u306B\u3042\u308B\u5BDD\u5BA4\u306E\u9375\u3060"
+  explanation: "2\u968E\u306B\u3042\u308B\u5BDD\u5BA4\u306E\u9375\u3060\n\u9306\u3073\u3066\u3044\u308B"
   keyID: 2
   KeyTexture: {fileID: 8400000, guid: 0324f99e62b99954ba750e04fccc513b, type: 2}
