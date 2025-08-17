@@ -19,7 +19,7 @@ public class TextWrite : MonoBehaviour
     /// <summary>
     /// 文字送りの演出
     /// </summary>
-    public void WriteText()
+    public void Write()
     {
         //前回の処理が走っていたら停止
         if (_coroutine != null)
@@ -39,10 +39,11 @@ public class TextWrite : MonoBehaviour
         var explanationLength = keyExplation.text.Length;
 
         //一文字ずつ表示する
-        for (int i = 0; i < nameLength; i++)
+        for (int i = 0; i < explanationLength; i++)
         {
-            keyName.maxVisibleCharacters = i;
+
             keyExplation.maxVisibleCharacters = i;
+            keyName.maxVisibleCharacters = i;
 
             //一定時間待機
             yield return delay;
