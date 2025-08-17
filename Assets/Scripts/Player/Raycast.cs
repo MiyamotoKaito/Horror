@@ -38,7 +38,7 @@ public class Raycast : MonoBehaviour
                 //Œ®‚Ìî•ñ‚ğUIã‚É•\¦
                 keyNameText.text = itemInfo.KeyType.keyName;
                 keyExplanationText.text = itemInfo.KeyType.explanation;
-                KeyDisplay.texture = itemInfo.KeyType.KeyObject;
+                KeyDisplay.texture = itemInfo.KeyType.KeyTexture;
 
                 //Œ®‚Ìæ“¾‚Æ“¯‚ÉUI‚ğ”ñ•\¦‚É‚·‚é
                 if (Input.GetKeyDown(KeyCode.F))
