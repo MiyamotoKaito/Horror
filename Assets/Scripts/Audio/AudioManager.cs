@@ -34,15 +34,38 @@ public class AudioManager : MonoBehaviour
 
         _audioSourse = GetComponent<AudioSource>();
     }
+    /// <summary>
+    /// SEを再生する
+    /// </summary>
+    /// <param name="name"></param>
     public void SEPlay(string name)
     {
         foreach (SoundClip clip in seList)
         {
             if (clip.Name == name)
             {
-                _audioSourse.PlayOneShot(clip.Clip);
+                _audioSourse?.PlayOneShot(clip.Clip);
                 break;
             }
         }
+    }
+    /// <summary>
+    /// BGMを再生する
+    /// </summary>
+    /// <param name="name"></param>
+    public void BGMPlay(string name)
+    {
+        foreach (SoundClip clip in bgmList)
+        {
+            if (clip.Name == name)
+            {
+                _audioSourse?.Play();
+                break;
+            }
+        }
+    }
+    public void BGMStop()
+    {
+        _audioSourse.Stop();
     }
 }
