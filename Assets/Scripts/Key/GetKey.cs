@@ -5,6 +5,7 @@ public class GetKey : MonoBehaviour
 {
     [SerializeField] private KeyBase keyType;
     [SerializeField] private static List<KeyType> keys = new List<KeyType>();
+
     private bool canGetKey;
 
     public KeyBase KeyType { get => keyType; set => keyType = value; }
