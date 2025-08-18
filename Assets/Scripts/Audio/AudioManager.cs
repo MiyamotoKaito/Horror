@@ -22,7 +22,7 @@ public class AudioManager : MonoBehaviour
 
     private void Awake()
     {
-        if (!Instance)
+        if (Instance == null)
         {
             Instance = this;
             DontDestroyOnLoad(this.gameObject);
@@ -44,6 +44,7 @@ public class AudioManager : MonoBehaviour
         {
             if (clip.Name == name)
             {
+                Debug.Log($"{clip.Name}を再生中");
                 _audioSourse?.PlayOneShot(clip.Clip);
                 break;
             }
