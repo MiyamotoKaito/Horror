@@ -1,6 +1,4 @@
 ﻿using TMPro;
-using Unity.VisualScripting;
-using Unity.VisualScripting.InputSystem;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
