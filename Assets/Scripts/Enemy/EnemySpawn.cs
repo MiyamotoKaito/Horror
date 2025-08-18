@@ -14,10 +14,11 @@ public class EnemySpawn : MonoBehaviour
     {
         enemy.SetActive(false);
     }
-    void Update()
+    private void Update()
     {
         if (GetKey.HasKey(keyType.keyID))//特定の鍵をプレイヤーが入手したらエネミーをスポーンさせる
         {
+            Debug.Log("AAA");
             enemy.SetActive(true);
         }
     }
