@@ -25,7 +25,6 @@ public class Raycast : MonoBehaviour
     }
     void Update()
     {
-
         Ray ray = povCamera.ScreenPointToRay(new Vector3(Screen.width / 2, Screen.height / 2, 0));
         RaycastHit hit;
         if (Physics.Raycast(ray, out hit, raycastDistance))
@@ -54,9 +53,10 @@ public class Raycast : MonoBehaviour
                     Debug.Log("鍵げっちゅ");
                 }
             }
-            if (hit.collider.CompareTag("GameOver"))
+            if (hit.collider.CompareTag("Face"))
             {
-                EyeContact enemyFace = FindObjectOfType<EyeContact>();
+                Debug.Log("目が合った");
+                EyeContact enemyFace = hit.collider.GetComponent<EyeContact>();
                 enemyFace.GameOver();
             }
         }
