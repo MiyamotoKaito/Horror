@@ -35,15 +35,15 @@ public class Raycast : MonoBehaviour
                 if (!keyInfo.activeInHierarchy)
                 {
                     keyInfo.SetActive(true);
+
+                    //鍵の情報をUI上に表示
+                    keyNameText.text = itemInfo.KeyType.keyName;
+                    keyExplanationText.text = itemInfo.KeyType.explanation;
+                    KeyDisplay.texture = itemInfo.KeyType.KeyTexture;
+
                     _action.Invoke();
                     Debug.Log("UI表示されてるよ");
                 }
-
-                //鍵の情報をUI上に表示
-                keyNameText.text = itemInfo.KeyType.keyName;
-                keyExplanationText.text = itemInfo.KeyType.explanation;
-                KeyDisplay.texture = itemInfo.KeyType.KeyTexture;
-
                 //鍵の取得と同時にUIを非表示にする
                 if (Input.GetKeyDown(KeyCode.F))
                 {
