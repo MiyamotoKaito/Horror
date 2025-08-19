@@ -4,13 +4,13 @@ public class DoorController : MonoBehaviour
 {
     [SerializeField] KeyBase keyType;
     private AudioSource _myAudioSource;
-    private Animator doorAnimator;
+    private Animator _doorAnimator;
     private bool _inTriger = false;
     private bool _doorOpen = false;
     private void Start()
     {
         _myAudioSource = GetComponent<AudioSource>();
-        doorAnimator = GetComponent<Animator>();
+        _doorAnimator = GetComponent<Animator>();
     }
     private void Update()
     {
@@ -27,15 +27,15 @@ public class DoorController : MonoBehaviour
             if (_doorOpen == false)
             {
                 Debug.Log("ドアを開けようとしている!!");
-                doorAnimator.SetBool("IsOpen", true);
-                doorAnimator.SetBool("IsClose", false);
+                _doorAnimator.SetBool("IsOpen", true);
+                _doorAnimator.SetBool("IsClose", false);
                 _doorOpen = true;
             }
             else if (_doorOpen == true)
             {
                 Debug.Log("ドアを閉めようとしている!!");
-                doorAnimator.SetBool("IsClose", true);
-                doorAnimator.SetBool("IsOpen", false);
+                _doorAnimator.SetBool("IsClose", true);
+                _doorAnimator.SetBool("IsOpen", false);
                 _doorOpen = false;
             }
         }
