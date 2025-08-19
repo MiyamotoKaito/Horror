@@ -37,7 +37,7 @@ public class AudioManager : MonoBehaviour
         _bgmAudioSourse = GetComponent <AudioSource>();
     }
     /// <summary>
-    /// SEを再生する
+    /// 引数に使いたいSEの名前を指定して再生する
     /// </summary>
     /// <param name="name"></param>
     public void SEPlay(string name)
