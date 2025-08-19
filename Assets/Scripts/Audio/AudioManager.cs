@@ -53,7 +53,7 @@ public class AudioManager : MonoBehaviour
         }
     }
     /// <summary>
-    /// BGMを再生する
+    /// 引数に使いたいBGMの名前を指定して再生する
     /// </summary>
     /// <param name="name"></param>
     public void BGMPlay(string name)
