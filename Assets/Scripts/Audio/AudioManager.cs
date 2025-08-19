@@ -18,7 +18,8 @@ public class AudioManager : MonoBehaviour
     [SerializeField, Header("BGMリスト")]
     private List<SoundClip> bgmList;
 
-    private AudioSource _audioSourse;
+    private AudioSource _seAudioSourse;
+    private AudioSource _bgmAudioSourse;
 
     private void Awake()
     {
@@ -32,7 +33,8 @@ public class AudioManager : MonoBehaviour
             Destroy(this.gameObject);
         }
 
-        _audioSourse = GetComponent<AudioSource>();
+        _seAudioSourse = GetComponent<AudioSource>();
+        _bgmAudioSourse = GetComponent <AudioSource>();
     }
     /// <summary>
     /// SEを再生する
@@ -45,7 +47,7 @@ public class AudioManager : MonoBehaviour
             if (clip.Name == name)
             {
                 Debug.Log($"{clip.Name}を再生中");
-                _audioSourse?.PlayOneShot(clip.Clip);
+                _seAudioSourse?.PlayOneShot(clip.Clip);
                 break;
             }
         }
@@ -60,13 +62,17 @@ public class AudioManager : MonoBehaviour
         {
             if (clip.Name == name)
             {
-                _audioSourse?.Play();
+                _bgmAudioSourse?.Play();
                 break;
             }
         }
     }
+    public void SEStop()
+    {
+        _seAudioSourse.Stop();
+    }
     public void BGMStop()
     {
-        _audioSourse.Stop();
+        _bgmAudioSourse.Stop();
     }
 }
