@@ -33,7 +33,7 @@ public class AudioManager : MonoBehaviour
     /// 引数に使いたいSEの名前を指定して再生する
     /// </summary>
     /// <param name="name"></param>
-    public void SEPlay(string name, AudioSource audioSource)
+    public void PlaySE(string name, AudioSource audioSource)
     {
         foreach (SoundClip clip in seList)
         {
@@ -49,7 +49,7 @@ public class AudioManager : MonoBehaviour
     /// 引数に使いたいBGMの名前を指定して再生する
     /// </summary>
     /// <param name="name"></param>
-    public void BGMPlay(string name, AudioSource AudioSource)
+    public void PlayBGM(string name, AudioSource AudioSource)
     {
         foreach (SoundClip clip in bgmList)
         {
@@ -63,28 +63,28 @@ public class AudioManager : MonoBehaviour
             }
         }
     }
-    public void SEStop(AudioSource audioSource)
+    public void StopSE(AudioSource audioSource)
     {
         Debug.Log($"SEの終了");
         audioSource?.Stop();
     }
-    public void SEPause(AudioSource audioSource)
+    public void PauseSE(AudioSource audioSource)
     {
         audioSource?.Pause();
     }
-    public void SEReStart(AudioSource audioSource)
+    public void ReStartSE(AudioSource audioSource)
     {
         audioSource?.UnPause();
     }
-    public void BGMStop(AudioSource audioSource)
+    public void StopBGM(AudioSource audioSource)
     {
         audioSource?.Stop();
     }
-    public void BGMPause(AudioSource audioSource)
+    public void PauseBGM(AudioSource audioSource)
     {
         audioSource?.Pause();
     }
-    public void BGMReStart(AudioSource audioSource)
+    public void ReStartBGM(AudioSource audioSource)
     {
         audioSource.UnPause();
     }

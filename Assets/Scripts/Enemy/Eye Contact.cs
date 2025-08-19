@@ -26,11 +26,11 @@ public class EyeContact : MonoBehaviour
     IEnumerator Noise()
     {
         gameOver.SetActive(true);
-        AudioManager.Instance.SEPlay("砂嵐", playerAudioSource);
+        AudioManager.Instance.PlaySE("砂嵐", playerAudioSource);
         isPlayerLook = true;
         yield return new WaitForSeconds(2f);
         gameOver.SetActive(false);
         ghost.SetActive(false);
-        AudioManager.Instance.SEStop(playerAudioSource);
+        AudioManager.Instance.StopSE(playerAudioSource);
     }
 }
