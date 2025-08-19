@@ -7,6 +7,8 @@ public class DangerField : EnemyBase
     [SerializeField] Image fov;
     [SerializeField] private PlayerController playerController;
     private float _playerDefaultSpeed;
+
+    private Coroutine _dangerCoroutine;
     protected override void Start()
     {
         base.Start();
@@ -24,7 +26,7 @@ public class DangerField : EnemyBase
             _anim.SetBool("Enemy Bend Over", true);
             playerController.SetMoveSpeed(playerController.SlowSpeed);
             Agent.speed = 0f;
-            StartCoroutine(Danger(1f));
+            _dangerCoroutine = StartCoroutine(Danger());
         }
         if (other.CompareTag("Destination"))
         {
@@ -39,12 +41,14 @@ public class DangerField : EnemyBase
             _anim.SetBool("Enemy Bend Over", false);
             playerController.SetMoveSpeed(_playerDefaultSpeed);
             Agent.speed = 0.5f;
-            StopCoroutine(Danger(1f));
+            StopCoroutine(_dangerCoroutine);
+            _dangerCoroutine = null;
         }
     }
-    private IEnumerator Danger(float second)
+    private IEnumerator Danger()
     {
-        fov.color = new Color(1f, 0, 0, 1f);
-        yield return new WaitForSeconds(second);
+
+        fov.color = Color.black;
+        yield return null;
     }
 }
