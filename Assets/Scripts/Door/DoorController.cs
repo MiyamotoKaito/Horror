@@ -9,6 +9,7 @@ public class DoorController : MonoBehaviour
     private bool _doorOpen = false;
     private void Start()
     {
+        _myAudioSource = GetComponent<AudioSource>();
         doorAnimator = GetComponent<Animator>();
     }
     private void Update()
