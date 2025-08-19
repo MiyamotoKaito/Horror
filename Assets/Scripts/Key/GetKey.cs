@@ -1,10 +1,12 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class GetKey : MonoBehaviour
 {
     [SerializeField] private KeyBase keyType;
     [SerializeField] private static List<KeyType> keys = new List<KeyType>();
+    public UnityEvent Action;
 
     private bool canGetKey;
 
@@ -15,6 +17,7 @@ public class GetKey : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.F) && canGetKey)
         {
             Debug.Log("鍵を入手");
+            Action.Invoke();
             keys.Add(KeyType.keyID);
             Destroy(gameObject);
         }
