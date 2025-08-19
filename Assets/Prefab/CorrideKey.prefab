@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 2550599859308676093}
   - component: {fileID: 40173822499795870}
   - component: {fileID: 8961139638995171291}
-  - component: {fileID: 8164550164595003625}
   m_Layer: 0
   m_Name: CorrideKey
   m_TagString: Untagged
@@ -72,7 +71,7 @@ MonoBehaviour:
   Action:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 8164550164595003625}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: MoveLockedArea, Assembly-CSharp
         m_MethodName: MoveArea
         m_Mode: 1
@@ -84,20 +83,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &8164550164595003625
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6590236353897499094}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1f7c41906775cd6439bf1a2451e9886b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  lockedArea: {fileID: 0}
-  movePos: {fileID: 0}
 --- !u!1001 &4401849837723348937
 PrefabInstance:
   m_ObjectHideFlags: 0
