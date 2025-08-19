@@ -1,11 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.Rendering;
 using UnityEngine;
 
 public class EyeContact : MonoBehaviour
 {
     [SerializeField] private GameObject ghost;
     [SerializeField] private GameObject gameOver;
+    [SerializeField] private AudioSource playerAudioSource;
     private bool isTrigger;
 
     void Awake()
@@ -24,11 +26,11 @@ public class EyeContact : MonoBehaviour
     IEnumerator Noise()
     {
         gameOver.SetActive(true);
-        AudioManager.Instance.SEPlay("砂嵐");
+        AudioManager.Instance.SEPlay("砂嵐", playerAudioSource);
         isTrigger = true;
         yield return new WaitForSeconds(2f);
         gameOver.SetActive(false);
         ghost.SetActive(false);
-        AudioManager.Instance.SEStop();
+        AudioManager.Instance.SEStop(playerAudioSource);
     }
 }
