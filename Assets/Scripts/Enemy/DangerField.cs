@@ -1,17 +1,18 @@
 ﻿using System.Collections;
 using UnityEngine;
-using UnityEngine.AI;
 using UnityEngine.UI;
 
-public class DangerField : EnemyBase
+public class DangerField : MonoBehaviour
 {
     [SerializeField] private Image fov;
     [SerializeField] private PlayerController playerController;
     [SerializeField] private AudioSource bgmAudioSource;
+    [SerializeField] private GameObject parent;
     private float _playerDefaultSpeed;
+    private bool isActive;
 
     private Coroutine _dangerCoroutine;
-    protected override void Start()
+    void Start()
     {
         fov.color = Color.clear;
         _playerDefaultSpeed = playerController.MoveSpeed;
@@ -20,28 +21,37 @@ public class DangerField : EnemyBase
     {
         fov.color = Color.Lerp(fov.color, Color.clear, Time.deltaTime);
     }
+
+    void OnDisable()
+    {
+        if (isActive)
+        {
+            playerController.SetMoveSpeed(_playerDefaultSpeed);
+            AudioManager.Instance.StopAudio(bgmAudioSource);
+            StopCoroutine(_dangerCoroutine);
+            _dangerCoroutine = null;
+        }
+    }
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
         {
-            //アニメーション
+            isActive = true;
             playerController.SetMoveSpeed(playerController.SlowSpeed);
-
+            AudioManager.Instance.PlayBGM("心臓音", bgmAudioSource);
             _dangerCoroutine = StartCoroutine(Danger());
         }
         if (other.CompareTag("Destination"))
         {
             Debug.Log("幽霊が消えた");
-            Destroy(gameObject);
+            parent.SetActive(false);
         }
     }
     private void OnTriggerExit(Collider other)
     {
         if (other.CompareTag("Player"))
         {
-            //アニメーション
             playerController.SetMoveSpeed(_playerDefaultSpeed);
-
             AudioManager.Instance.StopAudio(bgmAudioSource);
             StopCoroutine(_dangerCoroutine);
             _dangerCoroutine = null;
@@ -49,12 +59,7 @@ public class DangerField : EnemyBase
     }
     private IEnumerator Danger()
     {
-        AudioManager.Instance.PlayBGM("心臓音", bgmAudioSource);
-        //抜け出すまでループさせる
-        while (true) 
-        {
-            fov.color = Color.black;
-            yield return null;
-        }
+        fov.color = Color.black;
+        yield return null;
     }
 }
