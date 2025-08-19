@@ -3,6 +3,7 @@
 public class DoorController : MonoBehaviour
 {
     [SerializeField] KeyBase keyType;
+    private AudioSource _myAudioSource;
     private Animator doorAnimator;
     private bool _inTriger = false;
     private bool _doorOpen = false;
@@ -21,6 +22,7 @@ public class DoorController : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.F) && _inTriger == true)
         {
+            AudioManager.Instance.PlaySE("ドアの開け閉め",_myAudioSource);
             if (_doorOpen == false)
             {
                 Debug.Log("ドアを開けようとしている!!");
