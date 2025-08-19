@@ -28,6 +28,7 @@ public class EyeContact : MonoBehaviour
         isTrigger = true;
         yield return new WaitForSeconds(2f);
         gameOver.SetActive(false);
+        ghost.SetActive(false);
         AudioManager.Instance.BGMStop();
     }
 }
