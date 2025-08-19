@@ -26,10 +26,7 @@ public class DangerField : MonoBehaviour
     {
         if (isActive)
         {
-            playerController.SetMoveSpeed(_playerDefaultSpeed);
-            AudioManager.Instance.StopAudio(bgmAudioSource);
-            StopCoroutine(_dangerCoroutine);
-            _dangerCoroutine = null;
+            ExitArea();
         }
     }
     private void OnTriggerEnter(Collider other)
@@ -51,15 +48,23 @@ public class DangerField : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            playerController.SetMoveSpeed(_playerDefaultSpeed);
-            AudioManager.Instance.StopAudio(bgmAudioSource);
-            StopCoroutine(_dangerCoroutine);
-            _dangerCoroutine = null;
+            ExitArea();
         }
     }
     private IEnumerator Danger()
     {
         fov.color = Color.black;
         yield return null;
+    }
+
+    private void ExitArea()
+    {
+        if (_dangerCoroutine != null)
+        {
+            playerController.SetMoveSpeed(_playerDefaultSpeed);
+            AudioManager.Instance.StopAudio(bgmAudioSource);
+            StopCoroutine(_dangerCoroutine);
+            _dangerCoroutine = null;
+        }
     }
 }
