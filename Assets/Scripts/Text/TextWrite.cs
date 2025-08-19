@@ -8,8 +8,8 @@ using UnityEngine.Events;
 public class TextWrite : MonoBehaviour
 {
     [Header("読み込むためのテキスト")]
-    [SerializeField] private TextMeshProUGUI keyName;
-    [SerializeField] private TextMeshProUGUI keyExplation;
+    [SerializeField] private TextMeshProUGUI nameText;
+    [SerializeField] private TextMeshProUGUI explationText;
 
     [Header("読み込む速度")]
     [SerializeField] private float writeSpeed;
@@ -35,24 +35,24 @@ public class TextWrite : MonoBehaviour
         var delay = new WaitForSeconds(writeSpeed);
         
         //テキスト全体の長さ
-        var nameLength = keyName.text.Length;
-        var explanationLength = keyExplation.text.Length;
+        var nameLength = nameText.text.Length;
+        var explanationLength = explationText.text.Length;
 
         var maxLength = Mathf.Max(nameLength, explanationLength);
 
         //一文字ずつ表示する
         for (int i = 0; i < maxLength; i++)
         {
-            keyName.maxVisibleCharacters = Mathf.Min(i, nameLength);
-            keyExplation.maxVisibleCharacters = Mathf.Min(i, explanationLength);
+            nameText.maxVisibleCharacters = Mathf.Min(i, nameLength);
+            explationText.maxVisibleCharacters = Mathf.Min(i, explanationLength);
 
             //一定時間待機
             yield return delay;
         }
 
         // 最終的に全文字を表示
-        keyName.maxVisibleCharacters = nameLength;
-        keyExplation.maxVisibleCharacters = explanationLength;
+        nameText.maxVisibleCharacters = nameLength;
+        explationText.maxVisibleCharacters = explanationLength;
 
         _coroutine = null;
     }
