@@ -29,6 +29,6 @@ public class EyeContact : MonoBehaviour
         yield return new WaitForSeconds(2f);
         gameOver.SetActive(false);
         ghost.SetActive(false);
-        AudioManager.Instance.BGMStop();
+        AudioManager.Instance.SEStop();
     }
 }
