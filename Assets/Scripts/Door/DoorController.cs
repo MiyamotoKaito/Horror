@@ -22,10 +22,10 @@ public class DoorController : MonoBehaviour
     private void DoorAnimation()
     {
         if (Input.GetKeyDown(KeyCode.F) && _inTriger == true)
-        {
-            AudioManager.Instance.PlaySE("ドアの開け閉め",_myAudioSource);
+        {  
             if (_doorOpen == false)
             {
+                AudioManager.Instance.PlaySE("開ける", _myAudioSource);
                 Debug.Log("ドアを開けようとしている!!");
                 _doorAnimator.SetBool("IsOpen", true);
                 _doorAnimator.SetBool("IsClose", false);
@@ -33,6 +33,7 @@ public class DoorController : MonoBehaviour
             }
             else if (_doorOpen == true)
             {
+                AudioManager.Instance.PlaySE("閉める", _myAudioSource);
                 Debug.Log("ドアを閉めようとしている!!");
                 _doorAnimator.SetBool("IsClose", true);
                 _doorAnimator.SetBool("IsOpen", false);
