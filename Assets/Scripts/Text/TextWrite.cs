@@ -38,17 +38,19 @@ public class TextWrite : MonoBehaviour
         var nameLength = keyName.text.Length;
         var explanationLength = keyExplation.text.Length;
 
-        //一文字ずつ表示する
-        for (int i = 0; i < explanationLength; i++)
-        {
+        var maxLength = Mathf.Max(nameLength, explanationLength);
 
-            keyExplation.maxVisibleCharacters = i;
-            keyName.maxVisibleCharacters = i;
+        //一文字ずつ表示する
+        for (int i = 0; i < maxLength; i++)
+        {
+            keyName.maxVisibleCharacters = Mathf.Min(i, nameLength);
+            keyExplation.maxVisibleCharacters = Mathf.Min(i, explanationLength);
 
             //一定時間待機
             yield return delay;
         }
 
+        // 最終的に全文字を表示
         keyName.maxVisibleCharacters = nameLength;
         keyExplation.maxVisibleCharacters = explanationLength;
 
