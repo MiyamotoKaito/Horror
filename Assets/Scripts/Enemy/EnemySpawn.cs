@@ -9,6 +9,7 @@ public class EnemySpawn : MonoBehaviour
 {
     [SerializeField] private KeyBase keyType;
     [SerializeField] private GameObject enemy;
+    private bool isSpawn;
 
     private void Start()
     {
@@ -16,10 +17,15 @@ public class EnemySpawn : MonoBehaviour
     }
     private void Update()
     {
-        if (GetKey.HasKey(keyType.keyID))//特定の鍵をプレイヤーが入手したらエネミーをスポーンさせる
+        if (!isSpawn)
         {
-            Debug.Log("AAA");
-            enemy.SetActive(true);
+            if (GetKey.HasKey(keyType.keyID))//特定の鍵をプレイヤーが入手したらエネミーをスポーンさせる
+            {
+                Debug.Log("AAA");
+                isSpawn = true;
+                enemy.SetActive(true);
+
+            }
         }
     }
 }
