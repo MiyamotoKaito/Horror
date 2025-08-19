@@ -11687,6 +11687,8 @@ MonoBehaviour:
     Clip: {fileID: 8300000, guid: 96bb2d740de6cb74ab63d97f84f7d589, type: 3}
   - Name: "\u9589\u3081\u308B"
     Clip: {fileID: 8300000, guid: f977986810aaede40bfded9eccd06a69, type: 3}
+  - Name: "\u958B\u304B\u306A\u3044"
+    Clip: {fileID: 8300000, guid: 50536f4fe9e8d2b48a946322551087e7, type: 3}
   bgmList:
   - Name: "\u5FC3\u81D3\u97F3"
     Clip: {fileID: 8300000, guid: 4b613a4d958811b4f8e2ecfa4eee4156, type: 3}
