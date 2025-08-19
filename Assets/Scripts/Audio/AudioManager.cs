@@ -62,7 +62,9 @@ public class AudioManager : MonoBehaviour
         {
             if (clip.Name == name)
             {
-                _bgmAudioSourse?.PlayOneShot(clip.Clip);
+                _bgmAudioSourse.clip = clip.Clip;
+                _bgmAudioSourse.loop = true;
+                _bgmAudioSourse?.Play();
                 break;
             }
         }
@@ -71,8 +73,16 @@ public class AudioManager : MonoBehaviour
     {
         _seAudioSourse.Stop();
     }
+    public void SEPause()
+    {
+        _seAudioSourse.Pause();
+    }
     public void BGMStop()
     {
         _bgmAudioSourse.Stop();
+    }
+    public void BGMPause()
+    {
+        _bgmAudioSourse.Pause();
     }
 }
