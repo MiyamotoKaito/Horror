@@ -8,6 +8,7 @@ public class EyeContact : MonoBehaviour
     [SerializeField] private GameObject ghost;
     [SerializeField] private GameObject gameOver;
     [SerializeField] private AudioSource playerAudioSource;
+    [SerializeField] private float noiseTime;
     private bool isPlayerLook;
 
     void Awake()
@@ -28,9 +29,9 @@ public class EyeContact : MonoBehaviour
         gameOver.SetActive(true);
         AudioManager.Instance.PlaySE("砂嵐", playerAudioSource);
         isPlayerLook = true;
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(noiseTime);
         gameOver.SetActive(false);
         ghost.SetActive(false);
-        AudioManager.Instance.StopSE(playerAudioSource);
+        AudioManager.Instance.StopAudio(playerAudioSource);
     }
 }

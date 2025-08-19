@@ -57,7 +57,7 @@ public class AudioManager : MonoBehaviour
         {
             if (clip.Name == name)
             {
-                Debug.Log($"{clip.Name}を再生中");
+                Debug.Log($"{clip.Name}BGMを再生中");
                 AudioSource.clip = clip.Clip;
                 AudioSource.loop = true;
                 AudioSource?.Play();
@@ -65,29 +65,17 @@ public class AudioManager : MonoBehaviour
             }
         }
     }
-    public void StopSE(AudioSource audioSource)
+    public void StopAudio(AudioSource audioSource)
     {
-        Debug.Log($"SEの終了");
+        Debug.Log($"音源の再生を終了");
         audioSource?.Stop();
     }
-    public void PauseSE(AudioSource audioSource)
+    public void PauseAudio(AudioSource audioSource)
     {
         audioSource?.Pause();
     }
-    public void ReStartSE(AudioSource audioSource)
+    public void ReStartAudio(AudioSource audioSource)
     {
         audioSource?.UnPause();
-    }
-    public void StopBGM(AudioSource audioSource)
-    {
-        audioSource?.Stop();
-    }
-    public void PauseBGM(AudioSource audioSource)
-    {
-        audioSource?.Pause();
-    }
-    public void ReStartBGM(AudioSource audioSource)
-    {
-        audioSource.UnPause();
     }
 }
