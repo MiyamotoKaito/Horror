@@ -72,10 +72,12 @@ public class AudioManager : MonoBehaviour
     }
     public void PauseAudio(AudioSource audioSource)
     {
+        Debug.Log("一時停止");
         audioSource?.Pause();
     }
     public void ReStartAudio(AudioSource audioSource)
     {
+        Debug.Log("再開");
         audioSource?.UnPause();
     }
 }
