@@ -1,17 +1,18 @@
 ﻿using System.Collections;
 using UnityEngine;
+using UnityEngine.AI;
 using UnityEngine.UI;
 
 public class DangerField : EnemyBase
 {
-    [SerializeField] Image fov;
+    [SerializeField] private Image fov;
     [SerializeField] private PlayerController playerController;
+    [SerializeField] private AudioSource bgmAudioSource;
     private float _playerDefaultSpeed;
 
     private Coroutine _dangerCoroutine;
     protected override void Start()
     {
-        base.Start();
         fov.color = Color.clear;
         _playerDefaultSpeed = playerController.MoveSpeed;
     }
@@ -23,9 +24,9 @@ public class DangerField : EnemyBase
     {
         if (other.CompareTag("Player"))
         {
-            _anim.SetBool("Enemy Bend Over", true);
+            //アニメーション
             playerController.SetMoveSpeed(playerController.SlowSpeed);
-            Agent.speed = 0f;
+
             _dangerCoroutine = StartCoroutine(Danger());
         }
         if (other.CompareTag("Destination"))
@@ -38,17 +39,22 @@ public class DangerField : EnemyBase
     {
         if (other.CompareTag("Player"))
         {
-            _anim.SetBool("Enemy Bend Over", false);
+            //アニメーション
             playerController.SetMoveSpeed(_playerDefaultSpeed);
-            Agent.speed = 0.5f;
+
+            AudioManager.Instance.StopAudio(bgmAudioSource);
             StopCoroutine(_dangerCoroutine);
             _dangerCoroutine = null;
         }
     }
     private IEnumerator Danger()
     {
-
-        fov.color = Color.black;
-        yield return null;
+        AudioManager.Instance.PlayBGM("心臓音", bgmAudioSource);
+        //抜け出すまでループさせる
+        while (true) 
+        {
+            fov.color = Color.black;
+            yield return null;
+        }
     }
 }
