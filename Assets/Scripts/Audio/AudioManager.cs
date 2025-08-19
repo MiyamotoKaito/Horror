@@ -30,9 +30,10 @@ public class AudioManager : MonoBehaviour
         }
     }
     /// <summary>
-    /// 引数に使いたいSEの名前を指定して再生する
+    /// SEの名前と再生に使用するAudioSourceを指定する
     /// </summary>
     /// <param name="name"></param>
+    /// <param name="audioSource"></param>
     public void PlaySE(string name, AudioSource audioSource)
     {
         foreach (SoundClip clip in seList)
@@ -46,9 +47,10 @@ public class AudioManager : MonoBehaviour
         }
     }
     /// <summary>
-    /// 引数に使いたいBGMの名前を指定して再生する
+    /// BGMの名前と再生に使用するAudioSourceを指定する
     /// </summary>
     /// <param name="name"></param>
+    /// <param name="AudioSource"></param>
     public void PlayBGM(string name, AudioSource AudioSource)
     {
         foreach (SoundClip clip in bgmList)
