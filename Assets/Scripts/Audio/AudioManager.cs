@@ -46,7 +46,7 @@ public class AudioManager : MonoBehaviour
         {
             if (clip.Name == name)
             {
-                Debug.Log($"{clip.Name}を再生中");
+                Debug.Log($"{clip.Name}SEを再生中");
                 _seAudioSourse?.PlayOneShot(clip.Clip);
                 break;
             }
@@ -62,7 +62,7 @@ public class AudioManager : MonoBehaviour
         {
             if (clip.Name == name)
             {
-                _bgmAudioSourse?.Play();
+                _bgmAudioSourse?.PlayOneShot(clip.Clip);
                 break;
             }
         }
