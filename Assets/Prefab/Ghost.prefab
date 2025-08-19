@@ -1295,8 +1295,6 @@ GameObject:
   - component: {fileID: 5535036839901075695}
   - component: {fileID: 7287557621166120192}
   - component: {fileID: 6261971063660171730}
-  - component: {fileID: 4194647293580496678}
-  - component: {fileID: 2486189508518923884}
   - component: {fileID: 767418342237378279}
   m_Layer: 0
   m_Name: Ghost
@@ -1392,41 +1390,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!65 &4194647293580496678
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6020002821988015908}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &2486189508518923884
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6020002821988015908}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 14abdf745cca4a74fb00c993a56f7ca3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  fov: {fileID: 0}
-  playerController: {fileID: 0}
 --- !u!114 &767418342237378279
 MonoBehaviour:
   m_ObjectHideFlags: 0
