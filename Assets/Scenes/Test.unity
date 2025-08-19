@@ -995,19 +995,7 @@ MonoBehaviour:
   KeyDisplay: {fileID: 971346906}
   _action:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 407445989}
-        m_TargetAssemblyTypeName: TextWrite, Assembly-CSharp
-        m_MethodName: Write
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &407445989
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1781,7 +1769,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 47.14, y: 83.47, z: 35.7}
+  m_Size: {x: 400, y: 83.47, z: 35.7}
   m_Center: {x: 0, y: 43.7, z: 0}
 --- !u!114 &903936201
 MonoBehaviour:
@@ -1795,8 +1783,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 83fc0c67120bf7e41a38aa65f53f54c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ghost: {fileID: 8065627975233820076}
   gameOver: {fileID: 494094191}
-  face: {fileID: 903936195}
 --- !u!1 &939387930
 GameObject:
   m_ObjectHideFlags: 0
@@ -2742,9 +2730,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8796503248dfeb840b82335febf16f32, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  seList:
-  - Name: "\u7802\u5D50"
-    Clip: {fileID: 8300000, guid: e87cd3df3b159df419b73bc2e097d099, type: 3}
+  seList: []
   bgmList: []
 --- !u!1 &1404247272
 GameObject:
@@ -4461,7 +4447,7 @@ PrefabInstance:
     - target: {fileID: 5535036839901075695, guid: f6660e015fb250d428a83093d6545dc0, type: 3}
       propertyPath: m_Avatar
       value: 
-      objectReference: {fileID: 9000000, guid: 13d8e3dd1da9f6845b5d673e9ac54ecf, type: 3}
+      objectReference: {fileID: 0}
     - target: {fileID: 6020002821988015908, guid: f6660e015fb250d428a83093d6545dc0, type: 3}
       propertyPath: m_Name
       value: Ghost
