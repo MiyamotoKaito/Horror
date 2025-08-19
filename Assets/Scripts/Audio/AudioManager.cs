@@ -1,5 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 
 public class AudioManager : MonoBehaviour
@@ -18,11 +17,6 @@ public class AudioManager : MonoBehaviour
     [SerializeField, Header("BGMリスト")]
     private List<SoundClip> bgmList;
 
-    [SerializeField, Header("SEに付けるためのAudiosource")]
-    private AudioSource _seAudioSource;
-    [SerializeField, Header("BGMに付けるためのAudiosource")]
-    private AudioSource _bgmAudioSource;
-
     private void Awake()
     {
         if (Instance == null)
@@ -39,14 +33,14 @@ public class AudioManager : MonoBehaviour
     /// 引数に使いたいSEの名前を指定して再生する
     /// </summary>
     /// <param name="name"></param>
-    public void SEPlay(string name)
+    public void SEPlay(string name, AudioSource seAudioSource)
     {
         foreach (SoundClip clip in seList)
         {
             if (clip.Name == name)
             {
                 Debug.Log($"{clip.Name}SEを再生中");
-                _seAudioSource?.PlayOneShot(clip.Clip);
+                seAudioSource?.PlayOneShot(clip.Clip);
                 break;
             }
         }
@@ -55,33 +49,43 @@ public class AudioManager : MonoBehaviour
     /// 引数に使いたいBGMの名前を指定して再生する
     /// </summary>
     /// <param name="name"></param>
-    public void BGMPlay(string name)
+    public void BGMPlay(string name, AudioSource bgmAudioSource)
     {
         foreach (SoundClip clip in bgmList)
         {
             if (clip.Name == name)
             {
-                _bgmAudioSource.clip = clip.Clip;
-                _bgmAudioSource.loop = true;
-                _bgmAudioSource?.Play();
+                Debug.Log($"{clip.Name}BGMを再生中");
+                bgmAudioSource.clip = clip.Clip;
+                bgmAudioSource.loop = true;
+                bgmAudioSource?.Play();
                 break;
             }
         }
     }
-    public void SEStop()
+    public void SEStop(AudioSource se)
     {
-        _seAudioSource.Stop();
+        Debug.Log($"SEの終了");
+        se?.Stop();
     }
-    public void SEPause()
+    public void SEPause(AudioSource se)
     {
-        _seAudioSource.Pause();
+        se?.Pause();
     }
-    public void BGMStop()
+    public void SEReStart(AudioSource se)
     {
-        _bgmAudioSource.Stop();
+        se?.UnPause();
     }
-    public void BGMPause()
+    public void BGMStop(AudioSource bgm)
     {
-        _bgmAudioSource.Pause();
+        bgm?.Stop();
+    }
+    public void BGMPause(AudioSource bgm)
+    {
+        bgm?.Pause();
+    }
+    public void BGMReStart(AudioSource bgm)
+    {
+        bgm.UnPause();
     }
 }
